@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="56" viewBox="0 0 180 56" role="img" aria-labelledby="title desc">
+  <title id="title">Little Lemon logo</title>
+  <desc id="desc">A stylized yellow lemon with a green leaf and the text Little Lemon.</desc>
+  <rect width="180" height="56" fill="none" />
+  <g transform="translate(4 8)">
+    <ellipse cx="22" cy="20" rx="18" ry="13" fill="#f4ce14" stroke="#495e57" stroke-width="2" />
+    <path d="M33 9c6-8 13-9 20-5-8 2-11 7-12 13-5-1-7-3-8-8z" fill="#6ca965" />
+    <circle cx="15" cy="18" r="2" fill="#495e57" />
+  </g>
+  <text x="56" y="24" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#495e57">Little</text>
+  <text x="56" y="43" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#495e57">Lemon</text>
+</svg>
