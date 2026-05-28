@@ -95,6 +95,253 @@ body.little-lemon-app {
   align-content: start;
 }
 
+.page-block {
+  background: var(--paper);
+  border: 1px solid #d6d9d8;
+  border-radius: 0.75rem;
+  padding: 1.2rem;
+}
+
+.page-block h1 {
+  margin: 0 0 0.4rem;
+  font-family: "Markazi Text", Georgia, serif;
+  color: var(--green-700);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 0.95;
+}
+
+.booking-form {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 400px;
+  margin-top: 1.2rem;
+}
+
+.booking-form label {
+  font-weight: 700;
+  color: var(--green-700);
+  margin-top: 0.4rem;
+}
+
+.booking-form input[type="date"],
+.booking-form input[type="number"],
+.booking-form select {
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid #c2cbc8;
+  border-radius: 0.5rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  background: var(--paper);
+  color: var(--ink);
+  width: 100%;
+}
+
+.booking-form input[type="date"]:focus,
+.booking-form input[type="number"]:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 2px rgba(73,94,87,0.18);
+}
+
+.booking-form input[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--yellow-400);
+  border: none;
+  border-radius: 0.55rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-900);
+  cursor: pointer;
+}
+
+.booking-form input[type="submit"]:hover,
+.booking-form input[type="submit"]:focus-visible {
+  background: #e0b800;
+  outline: none;
+}
+
+.page-block p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--yellow-400);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cta {
+  background: var(--green-700);
+  color: var(--cloud-100);
+  border-radius: 0.9rem;
+  border: 1px solid #415650;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.cta-copy {
+  padding: 1.1rem;
+}
+
+.cta h1 {
+  margin: 0.1rem 0 0.35rem;
+  color: var(--paper);
+  font-family: "Markazi Text", Georgia, serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 700;
+  line-height: 0.92;
+}
+
+.cta p {
+  margin: 0;
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+.cta-button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  background: var(--yellow-400);
+  color: var(--green-900);
+  border-radius: 0.55rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.cta-image {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.specials,
+.testimonials,
+.chicago {
+  background: var(--paper);
+  border: 1px solid #d6d9d8;
+  border-radius: 0.9rem;
+  padding: 1.1rem;
+}
+
+.section-head h2,
+.testimonials h2,
+.chicago h2 {
+  margin: 0;
+  color: var(--green-700);
+  font-family: "Markazi Text", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 0.95;
+}
+
+.specials-grid,
+.testimonials-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.special-card,
+.review-card {
+  background: var(--cloud-100);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #d8dfdc;
+}
+
+.special-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.special-card-body {
+  padding: 0.85rem;
+}
+
+.special-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.special-card-row h3,
+.review-person h3 {
+  margin: 0;
+}
+
+.special-card-row span {
+  color: var(--salmon-400);
+  font-weight: 700;
+}
+
+.special-card p {
+  margin: 0.5rem 0 0;
+  line-height: 1.55;
+}
+
+.review-card {
+  padding: 0.85rem;
+}
+
+.review-stars {
+  margin: 0;
+  color: #f4a900;
+  letter-spacing: 0.05em;
+}
+
+.review-person {
+  margin: 0.55rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.review-person img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card p:last-child {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.chicago {
+  display: grid;
+  gap: 1rem;
+}
+
+.chicago-copy p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+.chicago-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.chicago-images img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.65rem;
+}
+
 .hero,
 .panel {
   background: var(--paper);
@@ -194,6 +441,29 @@ body.little-lemon-app {
   .site-main,
   .site-footer {
     padding: 1.25rem;
+  }
+
+  .cta {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+  }
+
+  .cta-copy {
+    padding: 1.35rem;
+  }
+
+  .cta-image {
+    max-height: 100%;
+  }
+
+  .specials-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .chicago {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 
   .content-grid {

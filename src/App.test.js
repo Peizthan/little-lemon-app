@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders homepage heading', () => {
+test('renders call to action heading', () => {
   render(<App />);
-  const headingElement = screen.getByRole('heading', { name: /homepage/i });
+  const headingElement = screen.getByRole('heading', {
+    name: /reserve a table in chicago/i,
+  });
   expect(headingElement).toBeInTheDocument();
 });
