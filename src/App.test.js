@@ -18,17 +18,17 @@ test('renders call to action heading', () => {
 
 // --- BookingForm static text ---
 test('renders BookingForm date label', () => {
-  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} />);
+  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} submitForm={() => {}} />);
   expect(screen.getByText('Choose date')).toBeInTheDocument();
 });
 
 test('renders BookingForm time label', () => {
-  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} />);
+  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} submitForm={() => {}} />);
   expect(screen.getByText('Choose time')).toBeInTheDocument();
 });
 
 test('renders BookingForm submit button', () => {
-  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} />);
+  render(<BookingForm availableTimes={initializeTimes()} dispatch={() => {}} submitForm={() => {}} />);
   expect(screen.getByDisplayValue('Make Your reservation')).toBeInTheDocument();
 });
 

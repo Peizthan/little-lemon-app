@@ -168,6 +168,42 @@ body.little-lemon-app {
   line-height: 1.6;
 }
 
+.confirmed-booking {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.confirmed-booking h1 {
+  color: var(--green-700);
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.confirmed-booking p {
+  max-width: 480px;
+  margin: 0 auto 1.8rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  background: var(--yellow-400);
+  border-radius: 0.55rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-700);
+  text-decoration: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #e0b800;
+  outline: none;
+}
+
 .eyebrow {
   margin: 0;
   color: var(--yellow-400);
