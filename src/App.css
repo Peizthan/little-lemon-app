@@ -163,6 +163,19 @@ body.little-lemon-app {
   outline: none;
 }
 
+.booking-form input[type="submit"]:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.field-error {
+  color: #c0392b;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: -0.2rem;
+}
+
 .page-block p {
   margin: 0;
   line-height: 1.6;
