@@ -4,15 +4,13 @@ import Homepage from './Homepage';
 import BookingPage from './BookingPage';
 
 export function initializeTimes() {
-  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+  return window.fetchAPI(new Date());
 }
 
 export function updateTimes(state, action) {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // Returns the same times regardless of date for now;
-      // a real API call would filter by action.date
-      return initializeTimes();
+      return window.fetchAPI(new Date(action.date));
     default:
       return state;
   }

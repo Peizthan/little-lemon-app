@@ -3,6 +3,11 @@ import App from './App';
 import BookingForm from './BookingForm';
 import { initializeTimes, updateTimes } from './Main';
 
+const mockTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+
+beforeEach(() => {
+  window.fetchAPI = jest.fn(() => mockTimes);
+});
 test('renders call to action heading', () => {
   render(<App />);
   const headingElement = screen.getByRole('heading', {
@@ -28,9 +33,10 @@ test('renders BookingForm submit button', () => {
 });
 
 // --- initializeTimes reducer function ---
-test('initializeTimes returns the default available times', () => {
+test('initializeTimes calls fetchAPI with today and returns available times', () => {
   const times = initializeTimes();
-  expect(times).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  expect(window.fetchAPI).toHaveBeenCalledWith(expect.any(Date));
+  expect(times).toEqual(mockTimes);
 });
 
 // --- updateTimes reducer function ---
@@ -40,8 +46,8 @@ test('updateTimes returns the same state for an unknown action', () => {
   expect(result).toEqual(state);
 });
 
-test('updateTimes returns the default times for UPDATE_TIMES action', () => {
-  const state = ['17:00'];
-  const result = updateTimes(state, { type: 'UPDATE_TIMES', date: '2026-06-01' });
-  expect(result).toEqual(initializeTimes());
+test('updateTimes calls fetchAPI with the dispatched date for UPDATE_TIMES', () => {
+  const result = updateTimes([], { type: 'UPDATE_TIMES', date: '2026-06-01' });
+  expect(window.fetchAPI).toHaveBeenCalledWith(new Date('2026-06-01'));
+  expect(result).toEqual(mockTimes);
 });
