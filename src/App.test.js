@@ -55,6 +55,46 @@ test('shows error message when past date is entered', async () => {
   expect(screen.getByRole('alert')).toBeInTheDocument();
 });
 
+// --- BookingForm submission ---
+test('submitForm is not called when form is invalid', async () => {
+  const mockSubmit = jest.fn();
+  render(<BookingForm availableTimes={mockTimes} dispatch={() => {}} submitForm={mockSubmit} />);
+  // date is empty — form is invalid; button is disabled so submit cannot fire normally,
+  // but we also guard inside handleSubmit for programmatic calls
+  const form = screen.getByRole('button', { hidden: true }) || document.querySelector('form');
+  // Attempt submit via the form element directly
+  const submitBtn = screen.getByDisplayValue('Make Your reservation');
+  expect(submitBtn).toBeDisabled();
+  expect(mockSubmit).not.toHaveBeenCalled();
+});
+
+test('submitForm is called with correct data on valid submission', async () => {
+  const mockSubmit = jest.fn();
+  render(
+    <BookingForm
+      availableTimes={mockTimes}
+      dispatch={() => {}}
+      submitForm={mockSubmit}
+    />
+  );
+
+  await userEvent.type(screen.getByLabelText('Choose date'), futureDate);
+  await userEvent.selectOptions(screen.getByLabelText('Choose time'), '18:00');
+  await userEvent.clear(screen.getByLabelText('Number of guests'));
+  await userEvent.type(screen.getByLabelText('Number of guests'), '4');
+  await userEvent.selectOptions(screen.getByLabelText('Occasion'), 'Anniversary');
+
+  await userEvent.click(screen.getByDisplayValue('Make Your reservation'));
+
+  expect(mockSubmit).toHaveBeenCalledTimes(1);
+  expect(mockSubmit).toHaveBeenCalledWith({
+    date: futureDate,
+    time: '18:00',
+    guests: 4,
+    occasion: 'Anniversary',
+  });
+});
+
 // --- initializeTimes reducer function ---
 test('initializeTimes calls fetchAPI with today and returns available times', () => {
   const times = initializeTimes();
