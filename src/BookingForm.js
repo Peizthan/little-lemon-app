@@ -50,7 +50,12 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   }
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} noValidate>
+    <form
+      className="booking-form"
+      onSubmit={handleSubmit}
+      noValidate
+      aria-label="Table reservation form"
+    >
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"

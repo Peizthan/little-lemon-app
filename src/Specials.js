@@ -31,20 +31,29 @@ function Specials() {
       <div className="section-head">
         <h2 id="specials-title">This Week Specials</h2>
       </div>
-      <div className="specials-grid">
+      <ul className="specials-grid" role="list" aria-label="Weekly specials menu">
         {specials.map((item) => (
-          <article className="special-card" key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <div className="special-card-body">
-              <div className="special-card-row">
-                <h3>{item.title}</h3>
-                <span>{item.price}</span>
+          <li key={item.id}>
+            <article className="special-card" aria-label={item.title}>
+              <img src={item.image} alt={item.title} />
+              <div className="special-card-body">
+                <div className="special-card-row">
+                  <h3>{item.title}</h3>
+                  <span aria-label={`Price: ${item.price}`}>{item.price}</span>
+                </div>
+                <p>{item.description}</p>
+                <a
+                  href="/order-online"
+                  className="card-link"
+                  aria-label={`On Click - Order ${item.title} for delivery`}
+                >
+                  Order a delivery
+                </a>
               </div>
-              <p>{item.description}</p>
-            </div>
-          </article>
+            </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

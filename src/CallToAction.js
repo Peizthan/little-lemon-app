@@ -10,7 +10,11 @@ function CallToAction() {
           Enjoy Mediterranean flavors, seasonal dishes, and a cozy dining
           experience in the heart of the neighborhood.
         </p>
-        <Link className="cta-button" to="/reservations">
+        <Link
+          className="cta-button"
+          to="/reservations"
+          aria-label="On Click - Reserve a table at Little Lemon"
+        >
           Reserve A Table
         </Link>
       </div>
